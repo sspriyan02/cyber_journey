@@ -1,1 +1,159 @@
+# 1. General security concepts
 
+## 1.1. Security controls
+
+What are security controls?
+
+- Security controls are basically measures that should be taken in order to protect the organization’s data, information technology, network and data against the threats.
+- We not only protect the data but also we protect everything associated with the building/organization.
+- There are four major categories of security controls, mainly:
+    - Technical
+    - Managerial
+    - Operational
+    - Physical
+
+🧠*Managerial* = “Plan it.”
+
+💻*Technical* = “Build it.”
+
+⚙️*Operational* = “Do it.”
+
+🏢*Physical* = “Lock it down.”
+
+### Technical control
+
+- These controls are basically known as the “tech” side of the controls, meaning they protect the hardware and software on the technical side preventing any data leaks, unauthorized entry and etc..
+- Examples:
+    - Antivirus software - protects system from any malware
+    - MFA - prevents unauthorized access even if the password is stolen
+    - Firewalls - controls the network traffic and prevents unauthorized access like hackers or malwares
+    - Encryption - scrambles the data to prevent eavesdropping and prevents data leaks
+    - ACLs - prevents unauthorized access in a network according to a list
+    - IDS (Intrusion Detection System) - detects and alerts about cyber attacks
+
+### Managerial/Administrative control
+
+- These type of controls are just rules, regulations and policies that are made and also executed while planning, organizing the safety measures.
+- These are directions on how the security in an organization works and to make sure everyone follow them.
+- Examples:
+    - Security policies
+    - Risk and management policies
+    - Incident response plan
+    - Access management policies
+
+### Operational control
+
+- This is a human-driven measure to ensure safety of the system.
+- Examples:
+    - Security guard - to prevent unauthorized access in to the building or office
+    - Security awareness training to employees - to prevent any human mistake and social engineering attacks
+    - incident response procedure taught to employees - to minimize the damage from spreading and containing it
+    - Configuration management - employees ensuring the system is set up securely and consistently to prevent hackers from exploiting the data.
+    - Data backup and recovery - to prevent permanent data loss.
+
+### Physical control
+
+- These are the physical and tangible measures of safety to prevent any unauthorized access to a building or any place where sensitive data is used like a server room or organization itself.
+- Examples:
+    - CCTV camera
+    - Locks/ badges
+    - Fences/ Gates
+    - Visitor logs and badges
+
+### Security control types
+
+- There are many types of security controls, mainly,
+    - Preventive - this control type completely prevents unauthorized access to data or the organization.
+    - Deterrent - These are like **warning signs**, they do not prevent the access but they make anyone think twice before entering.
+    - Detective - This control type identifies and alerts on case of and unauthorized intrusion *after* or *while* the intrusion is happening.
+    - Corrective - this is the security measure taken after the breach has been occurred or identified to reverse or minimize the impact and to continue running the system with minimal downtime.
+    - Compensating - these are alternative safeguarding measures incase your primary measures fail and this is used temporarily. *(Basically a backup plan for our main plan)*
+    - Directive - this is the rules and instructions that direct people to do their role and this doesn’t prevent or detect anything but it directs the people on their role.
+
+![image.png](attachment:9f3c79d7-b0d6-4a5b-b280-cf8b9309ff26:image.png)
+
+## 1.2. The CIA Triad
+
+- These are principles that has to be followed to ensure the safety of the IT system and this is also known as the AIC triad to differentiate it from the USA’s CIA force.
+- The letters in CIA/AIC stands for:
+    - C - Confidentiality
+    - I - Integrity
+    - A - Availability
+
+### Confidentiality
+
+- This security objective ensures that only authorized people can read the messages relevant to them or that the data is sent only to the authorized people.
+- This prevents data leaks, unauthorized access and spying from third parties.
+- Confidentiality is maintained by methods such as:
+    - Encryption
+    - Access controls - setting access to only the relevant people.
+    - Two factor authentication
+
+### Integrity
+
+- This security objective ensures that the data received is the data sent. meaning that it ensures that the data is accurate and unaltered by someone after sending.
+- This prevents unauthorized changes in data, tampering of data and corruption of data.
+- Integrity is maintained by methods such as:
+    - Hashing - when you send data it gets converted to a hash value and when the data is opened on the other end it checks the similarity of the hash value. if it’s the same then the data is not tampered with or else it signals that the data is tampered.
+    - Digital signature - the output when the sender encrypts the hash using an asymmetric encryption system is called a digital signature. With a digital signature we can verify that the data isn’t tampered with and also the person who sent it.
+    - Certificates - this is an additional level of security that proves the device that the data has been sent from and also the person providing additional level of integrity.
+    - Non-repudiation - this serves as the proof that the sender has sent the data (the sender can’t deny that he hasn’t sent that data or information) and as proof of the origin.
+
+### Availability
+
+- This security principle ensures that the data, system and the services are available to the authorized users whenever they need.
+- This prevents downtime when there is a hardware failure or any cyberattacks, ensures the other operations run smoothly in time of attacks and maintains the server reliability for the users.
+- Availability is maintained by methods such as:
+    - Redundancy - systems designed to always be up and running for the users.
+    - Fault tolerance - if one component fails it makes sure that all the other components will run smoothly
+    - Patching - this ensures that the system is patched and the system is stable at any time and also makes sure to fix the exploited security holes or any other vulnerabilities (that someone can use to hack in to the system) are fixed.
+
+## 1.3. Non-repudiation
+
+How does non-repudiation involve as proof of integrity?
+
+- First and foremost we have to ensure that the sent data is accurate and it has not been changed and for that we use hash.
+- Hash is a set of string text (aka message digest/fingerprint) and this is used to identify if the data has been changed when it goes to the receiver’s end.
+- But the hash is only use to verify if the data has been changed but not who sent it or who changed it.
+- For example here is the hash of a file :
+
+![image.png](attachment:5586ee2c-d8d0-4456-a448-6948eaa97f83:image.png)
+
+and here is the hash value of the same file after changing just one character:
+
+![image.png](attachment:fc679430-8937-4eae-a906-fac9fc97c7fe:image.png)
+
+we can see that the hash denotes that change has been occurred in the file. 
+
+- so with a digital signature (non repudiation) not only the receiver anyone can identify the sender serving as a good proof of integrity.
+
+The actual process goes like this:
+
+Given below is a conversation between Alice and Bob, here Alice sends a message to Bob saying he’s hired and for that she has added a digital signature and lot of cryptography happens in between → 
+
+![image.png](attachment:16c290f4-32de-420b-860b-293a5d5478f4:image.png)
+
+- Alice (in the process of creating a digital signature) creates a hash of the message using a hash conversion algorithm and then uses her private key (which only she knows) to encrypt it and that is called a digital signature. so when sending to Bob, Alice sends the plaintext/ message with the digital signature.
+- Then Alice send the message via email.
+
+![image.png](attachment:45e2da25-73b8-4b9d-9f67-cccd45eb442c:image.png)
+
+- Bob then uses Alice’s public key (which anyone can use) to decrypt the digital signature of Alice and gets the original hash text using the same hash conversion algorithm as Alice.
+- Now with the hash text from the digital signature he also obtains the hash of the file/ message (the “You’re hired, Bob” message) he received and then compares both the hashes.
+- If they match then we can confirm that the data hasn’t been altered and also that the message is from none other than Alice.
+
+Processes like these happen automatically or by the click of a button but these steps are the “Behind-the-scenes” of the whole process that ensures the non-repudiation. 
+
+## The AAA Framework
+
+1. Authentication - prove that we are who we claim to be using username and passwords.
+2. Authorization - proving the credentials of they are accurate.
+3. Accounting - keeping track of login time, logout time, data sent and received in that time.
+
+![image.png](attachment:58ba9397-90b7-40f4-a072-7e68f6da3f1b:image.png)
+
+The above diagram depicts the real-world process that occurs when someone tries to go over the firewall/ VPN concentrator to access the internal file server. 
+
+1. First the client on the internet has to go thru the firewall and to do that, the client has to prove that they are who they claim to be.
+2. In most of the companies this information is saved in a different server which is the AAA server which will Authenticate, Authorize and Account the client and client process.
+3. When the information is true and accurate the client can bypass the firewall and can use the internal file server.
