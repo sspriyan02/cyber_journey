@@ -1,1 +1,53 @@
+# Pre security
 
+## 1. Offensive security
+
+- this is the way we can think like hacker and break into computer systems and exploit the weakness in our systems and fix those loopholes in the system thru that process.
+- Also this is the process where we stimulate a hacker’s actions to find the vulnerabilities in the system and fix them legally.
+
+## 2. Defensive security
+
+- This is also known as the blue teaming is the process of protecting the IT infrastructure proactively and also preparing against any attacks by two main tasks:
+    1. Preventing intrusions from happening
+    2. Detecting any intrusions occurred and responding properly
+- Some of the processes included in defensive security are:
+    - Cyber security awareness - training users about attacks that may occur such as phishing and social engineering.
+    - Documenting and protecting assets - Getting to know the system in the infrastructure to actually defend them.
+    - Preventative security - This includes the main line of security which are firewalls and intrusion prevention systems. These are used to allow only the necessary traffic so that we can prevent anything malicious from entering the network.
+    - Logging and monitoring - Comprehensive logging into the network and monitoring is essential to identify a threat or unauthorized access.
+    - Frameworks, policies and procedures - Creating robust security policies can ensure that the organization’s properties are used appropriately.
+
+Now let’s consider some areas of the defensive security trying to protect the digital assets.
+
+1. SOC - Security Operation Centre
+2. Digital forensics
+3. Incident Response 
+
+## SOC (Security Operation Centre)
+
+- This includes a team of cybersecurity professionals who monitor and detect any malicious cyber threat events.
+- For example the areas of interest in this field are:
+    - Trends and vulnerabilities awareness - being up to date about the vulnerabilities that may occur in the current period is very essential to understand the risk the organization might face.
+    - Policy violations - there will be a security policy in any organization which are rules on how the organizations assets are to be used. so the SOC team looks for and makes sure for the adherence of those rules.
+    - Unauthorized and illegal activities - the SOC team will have an outline of acceptable behavior and any activity that deviates it is illegal so the SOC team keep monitoring for those activities because illegal activities leaves the organization in risk.
+    - Intrusion and breach detection - even though an organizations is well protected there may be a risk of intrusion so the SOC team will be in the lookout for that and also to respond when intrusion happens.
+
+## Digital forensics
+
+- This is also the traditional forensic science process but on digital devices. This process is used to analyze and preserve the evidence in case of breaches and aid in the investigation.
+- This involves looking at information, for example :
+    - File system - the file system analysis means checking the storage of a device (like a hard disk) which will reveal information such as what programs were installed in the device, what programs were created or modified in the device and also what files were deleted (even after deletion, partial information will remain).
+    - System memory - if the attacker runs any malicious program only in the memory (RAM) it doesn’t get stored in the disk so the disk forensics may miss it. But by examining the memory we can find out running processes, injected code, decrypted information and network connection used by the malware even if there was no file on disk.
+    - System logs - System logs are what the operating system and the app writes whenever something happens, they’re like a note book. The system writes user logins, programs start/stop, errors, network connections, security events. It’s hard for an attacker to delete all of the system logs because all these information are written on many places and sometimes they are also mirrored in many places and so there will always be evidence of the processes.  Using this we can find out who logged in and when, what ran and the errors. And we can compare them with the results from disk/memory forensics and find clarity on what happened.
+    - Network logs - These logs contain everything happened in that network like who connected to whom, when and what kind of data moved. And also with these logs we can determine **if an attack happened** by the unusual connections, port scans or data exfiltration and **how it happened** : what IPs, protocols or ports were used and **when it happened**: timestamps of suspicious traffics.
+
+## Incident Response
+
+- Incident response is like a fire drill on how the organization will handle a data breach, data leak or any other cyber attacks. This will include processes to minimize the damage, contain the threat and recover fast. The actual processes are:
+    - Preparation - this is the stage before anything happens. So this includes having a plan and procedures on how to respond if something bad happens; having an incident response team with managers, analysis team and communicators; building supportive infrastructure like having backups, having monitoring tools and alerting tools; preventive measures like training the employees and educating them on what to do in case of threats, and phishing awareness training to minimize any human errors.
+    - Detection and analysis - this step is about identifying the attack and understanding it thoroughly. For this step organizations will have alerting tools to identify the attack like antivirus, incident response systems, SIEM tools; Once something is detected we dig deeper to see the severity of the event like checking the logs, alerts, and the system data; only then we can determine how much of the system/data have been affected and how serious is it.
+    - Containment, eradication and recovery - This is the step where you take an action against the attack because first:
+        - Contain - we contain the attack from spreading further and attacking the systems that remain and for that we can disconnect the computers from the network and/or block the malicious IPs.
+        - Eradication - Find and remove the root cause of the attack and for that we can delete the malware from the system, close the vulnerable ports and patch the exploited software.
+        - Recovery - Bringing the systems to normal in this step, for that we restore the data from backups, be in a lookout for the attack returning.
+    - Post-incident activity - This is the stage where you learn from the incident and make the system stronger and for that we first examine what happened and how it was detected, contained and stopped from spreading; identify what worked well and what were the vulnerabilities; improve prevention methods if needed like patching and phishing awareness; we can update the security policies and provide extra training to prevent similar events occurring again.
